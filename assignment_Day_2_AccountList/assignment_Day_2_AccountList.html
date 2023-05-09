@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  variant="brand"  title="Account List Component" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <p> Parent Component </p>
+            <c-child-account-tile>
+                <p> I am from Account List Parent Component</p>
+                <p slot="Order"> This is named slots</p>
+            </c-child-account-tile>  
+        </div>
+        <div slot="footer"> Parent Card Footer</div>
+    </lightning-card>
+</template>

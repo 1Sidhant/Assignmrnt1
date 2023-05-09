@@ -1,0 +1,68 @@
+<template>
+<lightning-input label="Task Title" onchange={handleChangeTaskInput}></lightning-input>
+
+<lightning-combobox
+    name="Options to Choose"
+    label="Task Priority"
+    value="Priority"
+    placeholder="Select Task Priority"
+    options={options}>
+</lightning-combobox>
+<br>
+<slot>
+    <lightning-button variant="brand" label="Add To List" onclick={handleClick}></lightning-button>
+</slot>
+    <hr>
+    <h2> This is the task list</h2>
+    <br>
+    <ul>
+        <li>
+        {values}
+    </li>
+    </ul>
+    <hr>
+    <hr>
+    <hr>
+        <div class="slds-input">
+                <lightning-input type="text" 
+                         label="First Name" 
+                         placeholder="Enter First Name Here.." 
+                         onchange={handleChangeFirstName}>
+                </lightning-input>
+       
+                <lightning-input type="text" 
+                         label="Last Name" 
+                         placeholder="Enter Last Name Here.."
+                         onchange={handleChangeLastName}>
+                </lightning-input>
+
+                <lightning-input type="email"
+                         label="Email" 
+                         placeholder="Enter Email Here.."
+                         onchange={handleChangeEmail}>
+                </lightning-input>
+        
+                <lightning-input type="Number" 
+                         label="Phone" 
+                         placeholder="Enter Phone Number Here.."
+                         onchange={handleChangePhone}>
+                </lightning-input>
+                  
+                <lightning-input type="text"
+                         label="Title" 
+                         placeholder="Enter Title Here.."
+                         onchange={handleChangeTitle}>
+                </lightning-input>
+      
+                <lightning-input type="text"
+                         label="Department" 
+                         placeholder="Enter Department Here.."
+                         onchange={handleChangeDepartment}>
+                </lightning-input>
+      
+
+    <br>
+    
+        <lightning-button variant="brand" label="Cretae Contact" title="titleName" onclick={handleClick}></lightning-button>
+    </div>
+    </template>
