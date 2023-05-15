@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-m-around_large">
+        <p>
+            Parent Component
+        </p>
+        <p>
+            <lightning-button variant="base" label="labelName" title="titleName" onclick={handleClick}></lightning-button>
+        </p>
+       <p>
+        <c-child-of-first-assignmnet-day-five onclick={handleChildComponent}></c-child-of-first-assignmnet-day-five>
+       </p>
+       <p>
+        <template if:true={ContactsList} for:each={ContactsList} for:item="con" for:index="index">
+           <li key={con.Id}>
+                {con.FirstName}
+                {con.LastName}
+                {con.Title}
+           </li>
+        </template>
+       </p>
+    </div>
+
+    
+
+</template>
