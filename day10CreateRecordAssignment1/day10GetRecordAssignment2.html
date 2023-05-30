@@ -1,0 +1,32 @@
+<template>
+  <!--  <lightning-card  variant="Narrow"  title="LDS Get Record" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <template if:true={wiredLeadRecord}>
+                 Name : {name}
+                <br>
+                Lead Source : {leadSource}
+                <br>
+                Email :   {email}
+                <br>
+                Title :  {title}
+                <br>
+                Phone :  {phone}
+                <br>
+                Company : {company}
+                <br>
+                Industry : {industry}
+                <br>
+                Annual Revenue :  {annualrevenue}
+            </template>
+           
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>-->
+    <lightning-card  variant="Narrow"  title="LDS Get Record" icon-name="standard:Lead">
+        <lightning-record-form record-id={recordId}
+                           object-api-name={Lead} 
+                           mode="edit" 
+                           fields={fields}>
+        </lightning-record-form>
+    </lightning-card>
+</template>
