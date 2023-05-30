@@ -1,0 +1,8 @@
+<template>
+    <lightning-card  variant="Narrow"  title="LDS UPDATE RECORD" icon-name="standard:account">
+        <lightning-spinner size="small" variant="brand" alternative-text="loading....." if:true={isLoading}></lightning-spinner>
+        <lightning-button variant="brand" label="Update Record" title="Update Record" onclick={handleClick}></lightning-button>
+        <lightning-button variant="destructive" label="Delete Record" title="Delete Record" onclick={handleDeleteClick}></lightning-button>
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+</template>
