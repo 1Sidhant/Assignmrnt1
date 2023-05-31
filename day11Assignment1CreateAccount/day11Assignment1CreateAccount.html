@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Create Account">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                label="Industry"
+                options={industryOptions}
+                value={selectedIndustry}
+                placeholder="Select Industry"
+                onchange={handleIndustryChange}>
+            </lightning-combobox>
+            <lightning-input
+                label="Account Name"
+                value={accountName}
+                onchange={handleNameChange}>
+            </lightning-input>
+            <lightning-input
+                label="Phone"
+                value={phone}
+                onchange={handlePhoneChange}>
+            </lightning-input>
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Save"
+                    variant="brand"
+                    onclick={handleSave}>
+                </lightning-button>
+            <template if:true={isLoading}>
+                    <lightning-spinner variant="brand" alternative-text="Loading..."></lightning-spinner>
+            </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
