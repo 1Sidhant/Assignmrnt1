@@ -1,0 +1,38 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Create Object" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+            name="progress"
+            label="Choose the object to create the record "
+            value={selectedValue}
+            placeholder="Choose Object"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+
+            <br>
+            <template if:true={createAccount}>
+                <lightning-record-form
+                    object-api-name="Account"
+                    fields={accountFields}
+                    onsuccess={handleCreateAcccountSuccessMessage}>
+                </lightning-record-form>
+            </template>
+            <template if:true={createContact}>
+                <lightning-record-form
+                    object-api-name="Contact"
+                    fields={contactFields}>
+                </lightning-record-form>
+            </template>
+            <template if:true={createOpportunity}>
+                <lightning-record-form
+                    object-api-name="Opportunity"
+                    fields={opportunityFields}>
+                </lightning-record-form>
+            </template>
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+    
+
+    <p>Selected value is: {value}</p>
+</template>
