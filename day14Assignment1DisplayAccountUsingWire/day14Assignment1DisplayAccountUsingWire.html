@@ -1,0 +1,40 @@
+<template>
+    <lightning-card  variant="Narrow"  title=" Account List" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-button variant="neutral" label="Show Accounts" title="Show Accounts" onclick={handleClick}>
+
+            </lightning-button>
+                <template if:true={allAccounts} for:each={allAccounts} for:item="acc" for:index="index">
+                   <li key={acc.Id}>
+                       
+                       {acc.Rating}
+                       {acc.Name}
+
+                   </li>
+                </template>
+        </div>
+        <br>
+        <div>
+            <lightning-input type="text" 
+                            variant="standard" 
+                            name="name" 
+                            label="Account Name" 
+                            value={name}
+                            onchange={AccountNameHandleChange}
+                            placeholder="type Name...">
+            </lightning-input>
+            <lightning-input type="text" 
+                            variant="standard" 
+                            name="Phone" 
+                            label="Phone" 
+                            value={phone}
+                            onchange={AccountPhoneHandleChange}
+                            placeholder="type Number...">
+            </lightning-input>
+            
+            <lightning-button variant="base" label="Create Account" title="Create Account" onclick={handleCreateAccountClick}>
+            </lightning-button>
+        </div>
+        <div slot="footer">Card Footer</div>
+    </lightning-card>
+</template>
