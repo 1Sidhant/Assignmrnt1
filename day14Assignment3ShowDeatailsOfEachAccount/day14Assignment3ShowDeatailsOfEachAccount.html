@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Account Information">
+        <h1>Select an account to view details.</h1>
+        <br>
+      <div class="container" style="display:flex">
+        <div class="left-section" style="flex:1">
+            <h1>Select an account to view details.</h1>
+        <br>
+            <ul>
+                <template for:each={accounts} for:item="account">
+                    <li key={account.Id}>
+                    <p class="account-name" onclick={handleAccountClick} data-id={account.Id}>
+                    Name: {account.Name}
+                    <br>
+                    </p>
+                    </li>
+                </template>
+            </ul>
+        </div>
+      
+        <div class="right-section" style="flex:1">
+            <h1>Show Account Details</h1>
+        <br>
+            <template if:true={selectedAccount}>
+                <div>Name  :  {selectedAccount.Name}</div>
+                <div>Rating :  {selectedAccount.Rating}</div>
+                <div>Phone  :  {selectedAccount.Phone}</div>
+            </template>
+        </div>
+    </div>
+    </lightning-card>
+  </template>
